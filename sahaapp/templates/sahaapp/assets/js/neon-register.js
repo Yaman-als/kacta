@@ -81,7 +81,7 @@ var neonRegister = neonRegister || {};
 							},
 							error: function()
 							{
-								alert("An error occoured!");
+								//alert("An error occoured!");
 							},
 							success: function(response)
 							{

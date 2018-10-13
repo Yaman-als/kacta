@@ -48,11 +48,15 @@ var baseurl = '';
 
 		<div class="login-content">
 
+			<a href="index.html" class="logo">
+				<img src="{% static 'sahaapp/images/logo@2x.png' %}" width="120" alt="" />
+			</a>
+
 			<p class="description">Create an account, it's free and takes few moments only!</p>
 
 			<!-- progress bar indicator -->
 			<div class="login-progressbar-indicator">
-				<h3>43%</h3>
+
 				<span>logging in...</span>
 			</div>
 		</div>
@@ -66,8 +70,9 @@ var baseurl = '';
 	<div class="login-form">
 
 		<div class="login-content">
+			<!--method="post" action="{% url 'sahaapp:olustur' %}" role="form" -->
 
-			<form method="post" action="{% url 'sahaapp:olustur' %}" role="form" id="form_register">
+			<form id="form_register">
 				{% csrf_token %}
 				<div class="form-register-success">
 					<i class="entypo-check"></i>
@@ -142,10 +147,9 @@ var baseurl = '';
 									<i class="entypo-calendar"></i>
 								</div>
 
-								<input type="text" class="form-control" name="birthdate" id="birthdate" placeholder="Date of Birth (DD/MM/YYYY)" data-mask="date" autocomplete="off" />
+								<input type="text" class="form-control" name="birthdate" id="birthdate" placeholder="Date of Birth (DD/MM/YYYY)" autocomplete="off" />
 							</div>
 						</div>
-
 
 
 						<div class="form-group">
@@ -160,7 +164,6 @@ var baseurl = '';
 				</div>
 
 			</form>
-
 
 			<div class="login-bottom-links">
 

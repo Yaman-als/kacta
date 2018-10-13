@@ -4,8 +4,7 @@ from django import forms
 # Create your models here.
 class Oyuncular(models.Model):
     kullanici_adi   = models.CharField(max_length=60)
-    sifre           = forms.CharField(max_length=32)
-                                      #, widget=forms.PasswordInput)
+    sifre           = forms.CharField(max_length=32, widget=forms.PasswordInput)
     adi             = models.CharField(max_length=60)
     soyadi          = models.CharField(max_length=60)
     dogum_tarihi    = models.DateField()

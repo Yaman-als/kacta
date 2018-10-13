@@ -78,15 +78,20 @@ var neonRegister = neonRegister || {};
 								firstname:       	$("input#firstname").val(),
 								lastname:   		$("input#lastname").val(),
 								phone:          	$("input#phone").val(),
-								birthdate:          $("input#birthdate").val()
+								birthdate:          $("input#birthdate").val(),
+								csrfmiddlewaretoken:$('input[name=csrfmiddlewaretoken]').val()
 							},
 							error: function()
 							{
-								alert("An error occoured!");
+								alert("An error occoured!"+textStatus);
 							},
 							success: function(response)
 							{
+
+
+
 								// From response you can fetch the data object retured
+/*
 								var kullaniciadi = response.submitted_data.kullaniciadi,
 									phone = response.submitted_data.phone,
 									birthdate = response.submitted_data.birthdate,
@@ -94,8 +99,10 @@ var neonRegister = neonRegister || {};
 									lastname = response.submitted_data.lastname,
 									email = response.submitted_data.email,
 									sifre = response.submitted_data.sifre;
-								
-								
+
+*/
+
+
 								// Form is fully completed, we update the percentage
 								neonRegister.setPercentage(100);
 								
@@ -114,12 +121,12 @@ var neonRegister = neonRegister || {};
 										
 										// Now we show the success message
 										$(".form-register-success").slideDown('normal');
-										
+										alert("Welcome");
 										// You can use the data returned from response variable
 									});
 									
 								}, 1000);
-							}
+                            }
 						});
 					});
 				});
