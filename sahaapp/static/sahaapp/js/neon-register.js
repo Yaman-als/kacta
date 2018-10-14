@@ -68,7 +68,7 @@ var neonRegister = neonRegister || {};
 					{
 						// Send data to the server
 						$.ajax({
-							url: '/sahaapp/signup/olustur/',
+							url: '/sahaapp/signup/',
 							method: 'POST',
 							dataType: 'json',
 							data: {
@@ -87,11 +87,13 @@ var neonRegister = neonRegister || {};
 							},
 							success: function(response)
 							{
+							    /*alert("Welcome")
 
 
 
-								// From response you can fetch the data object retured
 /*
+								 From response you can fetch the data object retured
+
 								var kullaniciadi = response.submitted_data.kullaniciadi,
 									phone = response.submitted_data.phone,
 									birthdate = response.submitted_data.birthdate,
@@ -121,7 +123,7 @@ var neonRegister = neonRegister || {};
 										
 										// Now we show the success message
 										$(".form-register-success").slideDown('normal');
-										alert("Welcome");
+
 										// You can use the data returned from response variable
 									});
 									

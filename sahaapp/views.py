@@ -5,6 +5,8 @@ from .models import Oyuncular, Saha_yoneticileri, Sahalar, Oyunlar, Oyuncu_tel, 
 from datetime import datetime
 from django.views.decorators.csrf import csrf_exempt
 from django.http import HttpResponse
+import json
+
 
 class SignupView(generic.CreateView):
     template_name = 'sahaapp/signup.html'
@@ -26,10 +28,14 @@ def sign_up(request):
         oyuncu.save()
         oyuncu.oyuncu_tel_set.create(tel=request.POST.get('phone', ' '))
         oyuncu.oyuncu_email_set.create(email=request.POST.get('email', ' '))
-    dd = {'welcome': "Welcome"}
-    return HttpResponse(dd)
+        dd = json.dumps({"welcome": "Welcome"})
+        #di = {"wel": dd}
+        return HttpResponse(dd, content_type='application/json')
+    else:
+        return render(request, 'sahaapp/signup.html')
 
-#render(request, 'sahaapp/signup.html', dd)
+
+
 
 
 
